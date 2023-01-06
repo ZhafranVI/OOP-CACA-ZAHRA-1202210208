@@ -30,7 +30,7 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 								{"Sebagai simbol start dan end untuk memulai ataupun mengakhiri flowchart","Sebagai simbol preparation untuk pemberian nilai awal","Sebagai simbol proses untuk menuliskan sebuah proses misalkan operasi aritmatik","Sebagai simbol decision ntuk menyatakan proses yang membutuhkan keputusan/percabangan"},
 								{"Sebagai simbol start dan end untuk memulai ataupun mengakhiri flowchart","Sebagai simbol preparation untuk pemberian nilai awal","Sebagai simbol proses untuk menuliskan sebuah proses misalkan operasi aritmatik","Sebagai simbol decision ntuk menyatakan proses yang membutuhkan keputusan/percabangan"},
 								{"Sebagai simbol input dan output untuk menerima ataupun mengeluarkan data","Sebagai simbol preparation untuk pemberian nilai awal","Sebagai simbol proses untuk menuliskan sebuah proses misalkan operasi aritmatik","Sebagai simbol decision ntuk menyatakan proses yang membutuhkan keputusan/percabangan"},
-								{"Spaghetti, loops, UI, dan actual programs","Event driven, object oriented, spaghetti, dan actual programs","Object oriented, spaghetti, structured, dan event driven","Branches, structured, event handler, dan object oriented"}
+								{"Spaghetti, loops, UI, dan actual programs","Event driven, object oriented, spaghetti, dan actual programs","Object oriented, spaghetti, structured, dan event driven","Branches, structured, event handler, dan object oriented"},
 								{"Programming","Sequence","Flowchart","Pseudocode"}
 							};
 	//jawaban yang bener
