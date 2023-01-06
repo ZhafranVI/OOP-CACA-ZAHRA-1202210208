@@ -12,27 +12,36 @@ import javax.swing.*;
 public class Quiz implements ActionListener{ //implementasi antarmuka karena bakalan ada mencet tombol"
 	//paka array set(?)
 	String[] questions = 	{
-								"Which company created Java?",
-								"Which year was Java created?",
-								"What was Java originally called?",
-								"Who is credited with creating Java?",
+								"Prosedur sistematis untuk memecahkan masalah matematis dalam langkah-langkah terbatas adalah definisi dari?",
+								"Tipe programming structured adalah pendekatan programming yang membuat program menggunakan 3 bagian, yaitu...",
+								"Simbol belah ketupat pada flowchart berfungsi untuk?",
+								"Simbol persegi panjang pada flowchart berfungsi untuk?",
+								"Simbol jajar genjang pada flowchart berfungsi untuk?",
+								"Apa saja 4 tipe programming?",
+								"Diagram that shows the operations performed in an information processing system and the sequence in which the operation are performed, is the definition of?"
 							};
         
         
         
         //ini array 2 dimensi
 	String[][] options = 	{
-								{"Sun Microsystems","Starbucks","Microsoft","Alphabet"},
-								{"1989","1996","1972","1492"},
-								{"Apple","Latte","Oak","Koffing"},
-								{"Steve Jobs","Bill Gates","James Gosling","Mark Zuckerburg"},
+								{"Program","Algoritma","Variabel","Flowchart"},
+								{"Spaghetti, event driven, dan object oriented","UI, event handler, dan actual programs","Sequence, branches, dan loops","UI, branchess, dan object oriented"},
+								{"Sebagai simbol start dan end untuk memulai ataupun mengakhiri flowchart","Sebagai simbol preparation untuk pemberian nilai awal","Sebagai simbol proses untuk menuliskan sebuah proses misalkan operasi aritmatik","Sebagai simbol decision ntuk menyatakan proses yang membutuhkan keputusan/percabangan"},
+								{"Sebagai simbol start dan end untuk memulai ataupun mengakhiri flowchart","Sebagai simbol preparation untuk pemberian nilai awal","Sebagai simbol proses untuk menuliskan sebuah proses misalkan operasi aritmatik","Sebagai simbol decision ntuk menyatakan proses yang membutuhkan keputusan/percabangan"},
+								{"Sebagai simbol input dan output untuk menerima ataupun mengeluarkan data","Sebagai simbol preparation untuk pemberian nilai awal","Sebagai simbol proses untuk menuliskan sebuah proses misalkan operasi aritmatik","Sebagai simbol decision ntuk menyatakan proses yang membutuhkan keputusan/percabangan"},
+								{"Spaghetti, loops, UI, dan actual programs","Event driven, object oriented, spaghetti, dan actual programs","Object oriented, spaghetti, structured, dan event driven","Branches, structured, event handler, dan object oriented"}
+								{"Programming","Sequence","Flowchart","Pseudocode"}
 							};
 	//jawaban yang bener
         char[] answers = 		{
-								'A',
 								'B',
 								'C',
+								'D',
 								'C',
+								'A',
+								'C',
+								'C'
 							};
         //variabel yang dipake
 	char guess;
