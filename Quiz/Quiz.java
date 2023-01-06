@@ -61,6 +61,8 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 	JButton buttonB = new JButton();
 	JButton buttonC = new JButton();
 	JButton buttonD = new JButton();
+        JButton buttonRe = new JButton();
+        JButton buttonQuit = new JButton();
         //label jawaban
 	JLabel answer_labelA = new JLabel();
 	JLabel answer_labelB = new JLabel();
@@ -89,7 +91,7 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
         //konstruktor
 	public Quiz() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(650,1010); //ukuran tampilan gamenya mau segimana lebar, panjang
+		frame.setSize(650,900); //ukuran tampilan gamenya mau segimana lebar, panjang
 		frame.getContentPane().setBackground(new Color(114, 196, 250)); //warna background
 		frame.setLayout(null);
 		frame.setResizable(false); //ukuran frame jadi gak bisa diubah
@@ -136,7 +138,19 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 		buttonD.setFocusable(false);
 		buttonD.addActionListener(this);
 		buttonD.setText("D");
+                
+                buttonRe.setBounds(120,600,200,100);
+		buttonRe.setFont(new Font("Consolas",Font.BOLD,30));
+		buttonRe.setFocusable(false);
+		buttonRe.addActionListener(this);
+		buttonRe.setText("Reattempt");
 		
+                buttonQuit.setBounds(340,600,120,100);
+		buttonQuit.setFont(new Font("Consolas",Font.BOLD,30));
+		buttonQuit.setFocusable(false);
+		buttonQuit.addActionListener(this);
+		buttonQuit.setText("Exit");
+                
 		answer_labelA.setBounds(125,150,500,100);
 		answer_labelA.setBackground(new Color(50,50,50));
 		answer_labelA.setForeground(new Color(255,255,255));
@@ -158,7 +172,7 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 		answer_labelD.setFont(new Font("Consolas",Font.PLAIN,30));
 		
                 //timer
-		seconds_left.setBounds(535,510,100,100);
+		seconds_left.setBounds(535,600,100,100);
 		seconds_left.setBackground(new Color(25,25,25));
 		seconds_left.setForeground(new Color(255,0,0)); //tulisan
 		seconds_left.setFont(new Font("Consolas",Font.BOLD,60));
@@ -198,6 +212,8 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 		frame.add(answer_labelB);
 		frame.add(answer_labelC);
 		frame.add(answer_labelD);
+                frame.add(buttonRe);
+                frame.add(buttonQuit);
 		frame.add(buttonA);
 		frame.add(buttonB);
 		frame.add(buttonC);
@@ -206,6 +222,11 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 		frame.add(textfield);
 		frame.setVisible(true); //nampilin
 		
+                buttonRe.setVisible(false);
+                buttonQuit.setVisible(false);
+                
+                
+                
 		nextQuestion();
 	}
         
@@ -228,6 +249,7 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 		}
 	}
         
+        
         //pokoknya ttg pencel tombol
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -236,6 +258,9 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 			buttonB.setEnabled(false);
 			buttonC.setEnabled(false);
 			buttonD.setEnabled(false);
+                        buttonRe.setEnabled(false);
+                        
+                        buttonQuit.setEnabled(false);
 			
                         //klo pencet tombol A
 			if(e.getSource()==buttonA) {
@@ -262,8 +287,18 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 					correct_guesses++;
 				}
 			}
+                        if(e.getSource()==buttonRe) {
+                                frame.dispose();
+                                Quiz quiz = new Quiz();
+                                
+                        }
+                        if(e.getSource()==buttonQuit) {
+                                frame.dispose();
+                                
+                        }
 			displayAnswer();
 	}
+        
         
         //menampilkan jawaban yang benar
 	public void displayAnswer() {
@@ -274,6 +309,7 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 		buttonB.setEnabled(false);
 		buttonC.setEnabled(false);
 		buttonD.setEnabled(false);
+                
 		
 		if(answers[index] != 'A')
 			answer_labelA.setForeground(new Color(255,0,0));
@@ -328,6 +364,19 @@ public class Quiz implements ActionListener{ //implementasi antarmuka karena bak
 		buttonB.setEnabled(false);
 		buttonC.setEnabled(false);
 		buttonD.setEnabled(false);
+                
+                buttonA.setVisible(false);
+                buttonB.setVisible(false);
+                buttonC.setVisible(false);
+                buttonD.setVisible(false);
+                seconds_left.setVisible(false);
+                
+                buttonRe.setVisible(true);
+                buttonQuit.setVisible(true);
+                
+                        
+		buttonRe.setEnabled(true);
+		buttonQuit.setEnabled(true);
 		
 		result = (int)((correct_guesses/(double)total_questions)*100);
 		
